@@ -5,6 +5,7 @@ public class Employee {
     private String name;
     private String email;
     private String document;
+    private String jobPosition;
 
     public int getIdEmployee() {
         return this.id;
@@ -36,5 +37,13 @@ public class Employee {
 
     public String setEmployeeDocument(String document) {
         return this.document = document;
+    }
+
+    public String getJobPosition() {
+        return this.jobPosition;
+    }
+
+    public String setJobPosition(String jobPosition) {
+        return this.jobPosition = jobPosition;
     }
 }
