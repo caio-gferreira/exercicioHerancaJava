@@ -1,8 +1,12 @@
 package Components;
 
-public class Secretary  extends Employee {
+public class EmployeeSecretary  extends Employee {
     private String phone;
     private String ramal;
+
+    public EmployeeSecretary() {
+        this.setJobPosition("Secretária");
+    }
 
     public String getPhoneSecretary() {
         return this.phone;
