@@ -4,10 +4,6 @@ public class EmployeeManager extends Employee {
     private String login;
     private String password;
 
-    public EmployeeManager() {
-        this.setJobPosition("Gerente");
-    }
-
     public String getLogin() {
         return this.login;
     }

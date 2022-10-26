@@ -1,6 +1,6 @@
 package Components;
 
-public class Secretary  extends Employee{
+public class Secretary  extends Employee {
     private String phone;
     private String ramal;
 

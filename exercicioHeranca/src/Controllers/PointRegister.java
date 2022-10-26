@@ -2,50 +2,15 @@ package Controllers;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 import Components.Employee;
-import Components.EmployeeManager;
-import Components.EmployeeOperator;
 
 public class PointRegister {
     private long id;
-    // private EmployeeManager employeeManager;
-    // private EmployeeOperator employeeOperator;
     private LocalDate dateRegister;
+    private Employee employee;
     private LocalDateTime startHour;
     private LocalDateTime endHour;
-    private List<Employee> employeeList;
-
-    public PointRegister() {
-        this.employeeList = new ArrayList<>();
-    }
-
-    public boolean createEmployee(String jobPosition, String name, String document, String email, int id) {
-        if (jobPosition.equals("Gerente")) {
-            EmployeeManager employeeManager = new EmployeeManager();
-
-            employeeManager.setEmployeeName(name);
-            employeeManager.setEmployeeDocument(document);
-            employeeManager.setEmployeeEmail(email);
-            employeeManager.setIdEmployee(id);
-
-            this.employeeList.add(employeeManager);
-            return true;
-        } else if (jobPosition.equals("Operador")) {
-            EmployeeOperator employeeOperator = new EmployeeOperator();
-
-            employeeOperator.setEmployeeName(name);
-            employeeOperator.setEmployeeDocument(document);
-            employeeOperator.setEmployeeEmail(email);
-            employeeOperator.setIdEmployee(id); 
-
-            this.employeeList.add(employeeOperator);
-            return true;
-        }
-        return false;
-    }
 
     public long getRegisterId() {
         return this.id;
@@ -55,16 +20,12 @@ public class PointRegister {
         return this.id = id;
     }
 
-    // public Employee getEmployee() {
-    //     return this.employee;
-    // }
-
-    // public Employee setEmployee(Employee employee) {
-    //     return this.employee = employee;
-    // }
-
-     public LocalDate getRegisterDate() {
+    public LocalDate getRegisterDate() {
         return this.dateRegister;
+    }
+
+    public LocalDate setRegisterDate(LocalDate date) {
+        return this.dateRegister = date;
     }
 
     public LocalDateTime setStartHour(LocalDateTime startHour){
@@ -75,11 +36,28 @@ public class PointRegister {
         return this.startHour; 
     }
 
-    public LocalDateTime setRegisterEndHour(LocalDateTime endHour) {
+    public LocalDateTime setEndHour(LocalDateTime endHour) {
         return this.endHour = endHour;
     }
 
-    public LocalDateTime getRegisterEndHour() {
+    public LocalDateTime getEndHour() {
         return this.endHour;
+    }
+
+    public Employee setEmployee(Employee employee) {
+        return this.employee = employee;
+    }
+
+    public Employee getEmployee() {
+        return this.employee;
+    }
+
+    public void showData() {
+        Employee employe = this.getEmployee();
+        System.out.println("=======================================================");
+        System.out.println("Funcionário: " + employe.getEmployeeName());
+        System.out.println("Data de Registro: " + this.getRegisterDate());
+        System.out.println("Horário de Entrada: " + this.getStartHour());
+        System.out.println("Horário de Saída: " + this.getEndHour());
     }
 }
